@@ -1,11 +1,12 @@
-package com.Touristra.Touristra.model;
+package com.Touristra.model;
 
 import jakarta.persistence.*;
 import lombok.Data;
 
-@MappedSuperclass
+@Entity
+@Inheritance(strategy = InheritanceType.JOINED)
 @Data
-public abstract class User {
+public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
