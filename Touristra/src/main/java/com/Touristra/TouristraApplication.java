@@ -1,4 +1,4 @@
-package com.Touristra.Touristra;
+package com.Touristra;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

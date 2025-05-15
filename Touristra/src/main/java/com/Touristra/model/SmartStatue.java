@@ -1,7 +1,5 @@
-package com.Touristra.Touristra.model;
+package com.Touristra.model;
 
-import com.Touristra.Touristra.model.Place;
-import com.Touristra.Touristra.model.Tourist;
 import jakarta.persistence.*;
 import lombok.Data;
 

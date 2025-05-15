@@ -1,6 +1,5 @@
-package com.Touristra.Touristra.model;
+package com.Touristra.model;
 
-import com.Touristra.Touristra.model.User;
 import jakarta.persistence.Entity;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
@@ -11,6 +10,9 @@ import lombok.Data;
 @Table(name = "technical_support")
 @Data
 public class TechnicalSupport extends User {
+    private Integer id;
+    private Integer userId;
+
     @ManyToOne
     @JoinColumn(name = "place_id")
     private Place assignedPlace;

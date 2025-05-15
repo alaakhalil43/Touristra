@@ -1,4 +1,4 @@
-package com.Touristra.Touristra.model;
+package com.Touristra.model;
 
 import jakarta.persistence.*;
 import lombok.Data;
@@ -9,10 +9,10 @@ import java.util.Set;
 @Entity
 @Table(name = "tour_guides")
 @Data
-public class TourGuide {
-    @Id
-    private Integer userId;
+public class TourGuide extends User{
 
+    private Integer id;
+    private Integer userId;
     private String fullName;
     private String languages;
     private String rating;
