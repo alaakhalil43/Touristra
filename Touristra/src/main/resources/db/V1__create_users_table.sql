@@ -1,4 +1,4 @@
-CREATE TABLE users (
+CREATE TABLE user (
     id INT AUTO_INCREMENT PRIMARY KEY,
     email VARCHAR(255) NOT NULL UNIQUE,
     password VARCHAR(255) NOT NULL,
@@ -17,7 +17,7 @@ CREATE TABLE managers (
     id INT AUTO_INCREMENT PRIMARY KEY,
     user_id INT,
     place_id INT,
-    FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE,
+    FOREIGN KEY (user_id) REFERENCES user(id) ON DELETE CASCADE,
     FOREIGN KEY (place_id) REFERENCES places(id) ON DELETE SET NULL
 );
 
@@ -25,7 +25,7 @@ CREATE TABLE technical_support (
     id INT AUTO_INCREMENT PRIMARY KEY,
     user_id INT,
     place_id INT,
-    FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE,
+    FOREIGN KEY (user_id) REFERENCES user(id) ON DELETE CASCADE,
     FOREIGN KEY (place_id) REFERENCES places(id) ON DELETE SET NULL
 );
 
@@ -36,7 +36,7 @@ CREATE TABLE tourists (
     age INT,
     nationality VARCHAR(100),
     language VARCHAR(50),
-    FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
+    FOREIGN KEY (user_id) REFERENCES user(id) ON DELETE CASCADE
 );
 
 CREATE TABLE tour_guides (
@@ -46,7 +46,7 @@ CREATE TABLE tour_guides (
     languages VARCHAR(255),
     rating VARCHAR(255),
     availability boolean,
-    FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
+    FOREIGN KEY (user_id) REFERENCES user(id) ON DELETE CASCADE
 );
 
 CREATE TABLE smart_statues (
@@ -68,7 +68,7 @@ CREATE TABLE feedback (
     FOREIGN KEY (place_id) REFERENCES places(id)
 );
 
-CREATE TABLE souvenirs (
+CREATE TABLE Souvenir (
     id INT AUTO_INCREMENT PRIMARY KEY,
     place_id INT NOT NULL,
     name VARCHAR(255) NOT NULL,
@@ -86,13 +86,13 @@ CREATE TABLE carts (
     FOREIGN KEY (tourist_id) REFERENCES tourists(id) ON DELETE CASCADE
 );
 
-CREATE TABLE cart_items (
+CREATE TABLE CartItem (
     id INT AUTO_INCREMENT PRIMARY KEY,
     cart_id INT NOT NULL,
     souvenir_id INT NOT NULL,
     quantity INT NOT NULL,
     FOREIGN KEY (cart_id) REFERENCES carts(id) ON DELETE CASCADE,
-    FOREIGN KEY (souvenir_id) REFERENCES souvenirs(id) ON DELETE CASCADE
+    FOREIGN KEY (souvenir_id) REFERENCES Souvenir(id) ON DELETE CASCADE
 );
 
 CREATE TABLE orders (
@@ -104,14 +104,14 @@ CREATE TABLE orders (
     FOREIGN KEY (tourist_id) REFERENCES tourists(id) ON DELETE CASCADE
 );
 
-CREATE TABLE order_items (
+CREATE TABLE OrderItem (
     id INT AUTO_INCREMENT PRIMARY KEY,
     order_id INT NOT NULL,
     souvenir_id INT NOT NULL,
     quantity INT NOT NULL,
     price DECIMAL(10,2) NOT NULL,
     FOREIGN KEY (order_id) REFERENCES orders(id) ON DELETE CASCADE,
-    FOREIGN KEY (souvenir_id) REFERENCES souvenirs(id) ON DELETE CASCADE
+    FOREIGN KEY (souvenir_id) REFERENCES Souvenir(id) ON DELETE CASCADE
 );
 
 
