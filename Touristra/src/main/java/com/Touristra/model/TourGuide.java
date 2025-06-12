@@ -9,8 +9,10 @@ import java.util.Set;
 @Entity
 @Table(name = "tour_guides")
 @Data
-public class TourGuide extends User{
+public class TourGuide{
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private Integer userId;
     private String fullName;
