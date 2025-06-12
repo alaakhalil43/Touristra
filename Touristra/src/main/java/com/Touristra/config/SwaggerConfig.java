@@ -17,8 +17,8 @@ public class SwaggerConfig {
     public OpenAPI customizeOpenAPI() {
         final String securitySchemeName = "bearerAuth";
         return new OpenAPI()
-                .info(new Info().title("Transfer Service API")
-                        .description("This is a sample Transfer Service API")
+                .info(new Info().title("Touristra API")
+                        .description("Endpoints for Touristra")
                         .version("1.0.0"))
                 .addSecurityItem(new SecurityRequirement()
                         .addList(securitySchemeName))
