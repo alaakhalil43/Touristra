@@ -16,9 +16,7 @@ public class CartItem {
 
     @ManyToOne
     @JoinColumn(name = "souvenir_id", nullable = false)
-    private Souvenir souvenir;
+    private SouvenirStore souvenir;
 
     private Integer quantity;
-
-    // Getters and setters
 }

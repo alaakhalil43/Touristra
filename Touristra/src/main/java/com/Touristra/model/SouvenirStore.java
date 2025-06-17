@@ -7,7 +7,7 @@ import lombok.Data;
 
 @Data
 @Entity
-public class Souvenir {
+public class SouvenirStore {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
@@ -22,5 +22,5 @@ public class Souvenir {
     private String imageUrl;
     private Integer stock;
 
-    // Getters and setters
+
 }

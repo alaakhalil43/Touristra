@@ -16,7 +16,7 @@ public class OrderItem {
 
     @ManyToOne
     @JoinColumn(name = "souvenir_id", nullable = false)
-    private Souvenir souvenir;
+    private SouvenirStore souvenir;
 
     private Integer quantity;
     private Double price;

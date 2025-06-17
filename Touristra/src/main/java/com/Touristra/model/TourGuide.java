@@ -14,16 +14,8 @@ public class TourGuide{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-    private Integer userId;
     private String fullName;
+    private String image;
     private String languages;
     private String rating;
-
-    @ManyToMany
-    @JoinTable(
-            name = "guide_routes",
-            joinColumns = @JoinColumn(name = "guide_id"),
-            inverseJoinColumns = @JoinColumn(name = "route_id")
-    )
-    private Set<TourRoutes> routes = new HashSet<>();
 }

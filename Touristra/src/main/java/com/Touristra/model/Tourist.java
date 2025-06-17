@@ -18,9 +18,6 @@ public class Tourist {
         private String nationality;
         private String language;
 
-        @ManyToMany
-        @JoinTable(name = "tourist_routes", joinColumns = @JoinColumn(name = "tourist_id"), inverseJoinColumns = @JoinColumn(name = "route_id"))
-        private Set<TourRoutes> routes = new HashSet<>();
 
         @ManyToMany
         @JoinTable(name = "tourist_statues", joinColumns = @JoinColumn(name = "tourist_id"), inverseJoinColumns = @JoinColumn(name = "statue_id"))

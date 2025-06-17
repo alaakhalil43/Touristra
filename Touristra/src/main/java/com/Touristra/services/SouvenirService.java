@@ -1,6 +1,5 @@
 package com.Touristra.services;
-
-import com.Touristra.model.Souvenir;
+import com.Touristra.model.SouvenirStore;
 import com.Touristra.repositories.SouvenirRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -13,15 +12,15 @@ public class SouvenirService {
     @Autowired
     private SouvenirRepository souvenirRepository;
 
-    public List<Souvenir> getAllSouvenirs() {
+    public List<SouvenirStore> getAllSouvenirs() {
         return souvenirRepository.findAll();
     }
 
-    public Optional<Souvenir> getSouvenirById(Integer id) {
+    public Optional<SouvenirStore> getSouvenirById(Integer id) {
         return souvenirRepository.findById(id);
     }
 
-    public Souvenir saveSouvenir(Souvenir souvenir) {
+    public SouvenirStore saveSouvenir(SouvenirStore souvenir) {
         return souvenirRepository.save(souvenir);
     }
 

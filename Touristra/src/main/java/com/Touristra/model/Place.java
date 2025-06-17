@@ -13,13 +13,10 @@ public class Place {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-
     @Column(nullable = false)
     private String name;
     private String address;
     private String description;
-    private String longitude;
-    private String latitude;
 
     @OneToMany(mappedBy = "place")
     private Set<SmartStatue> statues = new HashSet<>();
