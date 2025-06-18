@@ -16,6 +16,7 @@ public class TourGuide{
     private Integer id;
     private String fullName;
     private String image;
+    private Integer priceForHour;
     private String languages;
     private String rating;
 }

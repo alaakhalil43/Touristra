@@ -24,12 +24,10 @@ public class TourGuideController {
                 .map(ResponseEntity::ok)
                 .orElse(ResponseEntity.notFound().build());
     }
-
     @PostMapping
     public TourGuide create(@RequestBody TourGuide tourGuide) {
         return tourGuideService.saveTourGuide(tourGuide);
     }
-
     @PutMapping("/{id}")
     public ResponseEntity<TourGuide> update(@PathVariable Integer id, @RequestBody TourGuide tourGuide) {
         if (!tourGuideService.getTourGuideById(id).isPresent())

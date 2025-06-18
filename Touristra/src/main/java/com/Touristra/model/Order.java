@@ -9,20 +9,22 @@ import java.util.List;
 @Entity
 @Table(name = "orders")
 public class Order {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
+//    @ManyToOne
+//    @JoinColumn(name = "tourist_id", nullable = false)
+//    private Tourist tourist;
+
     @ManyToOne
-    @JoinColumn(name = "tourist_id", nullable = false)
-    private Tourist tourist;
+    @JoinColumn(name = "user_id")
+    private User user;
 
-    private Double total;
-    private String status;
-    private LocalDateTime createdAt;
+    private LocalDateTime orderDate;
 
-    @OneToMany(mappedBy = "order", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "order", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<OrderItem> orderItems;
 
-    // Getters and setters
 }
